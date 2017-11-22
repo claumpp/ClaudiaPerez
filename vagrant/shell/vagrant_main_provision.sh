@@ -41,6 +41,8 @@ roles_list[4]='geerlingguy.composer'
 roles_list[5]='geerlingguy.mysql'
 roles_list[6]='geerlingguy.repo-remi'
 roles_list[7]='geerlingguy.php-versions'
+roles_list[8]='geerlingguy.redis'
+
 
 for role_and_version in "${roles_list[@]}"
 do
@@ -63,3 +65,6 @@ sed -i --follow-symlinks 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selin
 # Execute Ansible
 echo "-> Execute Ansible"
 ansible-playbook /ansible/playbook.yml -i /ansible/inventories/hosts --connection=local
+
+echo "-> Execute Ansible with playbook_redis"
+ansible-playbook /ansible/playbook_redis.yml -i /ansible/inventories/hosts --connection=local
