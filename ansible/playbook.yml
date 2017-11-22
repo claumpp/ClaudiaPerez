@@ -21,7 +21,7 @@
 
   tasks:
     - name: Create index.php
-      template: src=templates/index.php dest=/var/www/myproject/info.php
+      template: src=templates/index.php dest=/var/www/myproject/index.php
 
     - name: Create phpinfo();
       template: src=templates/info.php dest=/var/www/myproject/info.php

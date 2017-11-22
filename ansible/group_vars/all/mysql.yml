@@ -1,1 +1,9 @@
 mysql_enablerepo: "remi,epel"
+mysql_databases: 
+  - name: mympwar
+    encoding: latin1
+    collation: latin1_general_ci
+
+  - name: mympwar_test
+    encoding: latin1
+    collation: latin1_general_ci
