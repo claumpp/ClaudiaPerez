@@ -20,6 +20,11 @@
     - { role: geerlingguy.mysql }
 
   tasks:
+
+    - name: Create directory
+      file: path=/var/www/myproject state=directory
+
+
     - name: Create index.php
       template: src=templates/index.php dest=/var/www/myproject/index.php
 
