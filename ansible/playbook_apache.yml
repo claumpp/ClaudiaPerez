@@ -1,6 +1,6 @@
 ---
 - name: Server Config LAMP
-  hosts: "webservers"
+  hosts: "apacheserver"
   become: true
   become_user: root
   roles:
