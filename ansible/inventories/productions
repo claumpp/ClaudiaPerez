@@ -1,2 +1,2 @@
 [webservers]
-34.253.58.123
+34.253.58.123 ansible_ssh_private_key_file=/ansible/files/mpwar2017.pem ansible_user=root

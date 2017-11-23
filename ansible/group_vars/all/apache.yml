@@ -3,3 +3,4 @@ apache_enable_repo: "remi"
 apache_vhosts:
   - servername: "myMpwar.dev"
     documentroot: "/var/www/myproject"
+    
