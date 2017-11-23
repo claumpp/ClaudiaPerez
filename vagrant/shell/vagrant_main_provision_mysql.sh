@@ -34,22 +34,17 @@ fi
 echo "-> Installing Ansibe Galaxy Modules"
 
 
-roles_list[0]='geerlingguy.mysql'
+$role='geerlingguy.mysql'
 
+role_and_version_for_grep="${role/,/, }"
 
+if ! sudo ansible-galaxy list | grep -qw "$role_and_version_for_grep";
+then
+        echo "Installing geerlingguy.mysql"
+        sudo ansible-galaxy -f install $role
+else
+    echo "Already installed geerlingguy.mysql"
 
-for role_and_version in "${roles_list[@]}"
-do
-    role_and_version_for_grep="${role_and_version/,/, }"
-
-    if ! sudo ansible-galaxy list | grep -qw "$role_and_version_for_grep";
-    then
-            echo "Installing ${role_and_version}"
-            sudo ansible-galaxy -f install $role_and_version
-   else
-        echo "Already installed ${role_and_version}"
-    fi
-done
 
 echo "Disable permanently SE Linux in apache"
 sudo setenforce 0;
