@@ -1,0 +1,8 @@
+---
+- name: Server Config LAMP
+  hosts: "mysqlserver"
+  become: true
+  become_user: root
+  roles:
+
+    - { role: geerlingguy.mysql }
